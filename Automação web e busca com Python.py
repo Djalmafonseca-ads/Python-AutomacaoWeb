@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[18]:
-
-
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
@@ -43,19 +37,11 @@ print(cotacao_ouro)
 
 navegador.quit()
 
-
-# In[19]:
-
-
 # Passo 4: Importar a lista de produtos
 import pandas as pd
 
 tabela = pd.read_excel("C://Users/crist/Downloads/Produtos.xlsx")
 display(tabela)
-
-
-# In[21]:
-
 
 # Passo 5: Recalcular o preço de cada produto
 # atualizar a cotação
@@ -73,10 +59,6 @@ tabela["Preço de Venda"] = tabela["Preço de Compra"] * tabela["Margem"]
 # tabela["Preço de Venda"] = tabela["Preço de Venda"].map("R${:.2f}".format)
 
 display(tabela)
-
-
-# In[ ]:
-
 
 # Passo 6: Salvar os novos preços dos produtos
 tabela.to_excel("Produtos Novo.xlsx", index=False)
